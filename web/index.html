@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Earning Mini App</title><link rel="stylesheet" href="/static/styles.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+<header class="top"><div class="avatar">TV</div><div><small>WELCOME BACK</small><h2 id="greeting">Earning Hub</h2></div><span class="online">● ONLINE</span></header>
+<main>
+<section class="balance card"><small>Total Balance</small><div class="amount">$<span id="balance">0.0000</span> <small>USD</small></div><p>Pending: $<span id="pending">0.0000</span></p><button class="danger" id="withdrawScroll">Withdraw funds</button></section>
+<nav class="quick">
+<button data-section="tasks">☷<span>Tasks</span></button><button data-section="videos">▶<span>Videos</span></button><button data-section="refer">♧<span>Refer</span></button><button data-section="withdraw">▣<span>Withdraw</span></button>
+</nav>
+<section class="card"><div class="section-head"><h3>Fresh Tasks</h3><span class="pill">VERIFIED REWARDS</span></div><div id="tasks"><p class="muted">Loading tasks…</p></div></section>
+<section class="card" id="videos"><h3>Videos & Categories</h3><div class="chips"><span>Fresh Videos</span><span>Viral Videos</span><span>Movies & Clips</span></div><p class="muted">Videos will appear when an admin adds approved content.</p></section>
+<section class="card" id="refer"><h3>Invite Friends</h3><p>Referral bonuses are pending until your invited friend completes a qualifying task.</p><div class="refbox" id="refLink">Open in Telegram to create your invite link.</div><button id="copyRef">Copy referral link</button></section>
+<section class="card" id="withdraw"><h3>Withdraw</h3><p class="muted">Minimum withdrawal is configured by the server. Requests require admin review.</p>
+<label>Amount (USD)<input id="withdrawAmount" type="number" min="0" step="0.01" placeholder="10.00"></label>
+<label>Method<select id="withdrawMethod"><option value="manual">Manual / other</option><option value="bkash">bKash (admin-verified)</option><option value="nagad">Nagad (admin-verified)</option></select></label>
+<label>Payment details<input id="withdrawDetails" maxlength="500" placeholder="Enter payout details"></label>
+<button id="withdrawSubmit">Submit request</button><p id="withdrawMessage" class="muted"></p></section>
+<section class="card"><h3>Transaction History</h3><button id="loadHistory" class="secondary">Load history</button><div id="history"></div></section>
+</main>
+<footer><span>Home</span><span>Refer</span><span>Earn</span><span>Rank</span><span>Profile</span></footer>
+<div id="toast" role="status"></div><script src="/static/app.js"></script>
+</body></html>
